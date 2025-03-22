@@ -20,8 +20,8 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: ls
-        run: ls
+      - name: chmod
+        run: chmod +x gradlew
       
       - name: Build and Push Image
         run: |
