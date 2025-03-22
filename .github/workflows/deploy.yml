@@ -1,6 +1,13 @@
 name: Deploy Config Server
 on: [push]
 jobs:
+  echo:
+     runs-on: ubuntu-latest
+     steps:
+       - name: check-env
+         run: |
+           echo ${{ secrets.DOCKER_USER }}
+           
   build-and-push:
     runs-on: ubuntu-latest
     steps:
@@ -11,7 +18,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Image
         run: |
