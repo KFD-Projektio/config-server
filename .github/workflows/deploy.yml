@@ -6,7 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
+      - name: chmod gradlew
+        run: chmod +x gradlew  # Важно!
+      
       - name: Build JAR
         run: ./gradlew :config-server:build
 
