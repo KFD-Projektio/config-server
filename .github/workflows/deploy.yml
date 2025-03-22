@@ -20,7 +20,10 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: ls
+        run: ls
+      
       - name: Build and Push Image
         run: |
-          docker build -t stannisl/kfd-config-server:latest -f config-server/Dockerfile .
+          docker build -t stannisl/kfd-config-server:latest -f Dockerfile .
           docker push stannisl/kfd-config-server:latest
