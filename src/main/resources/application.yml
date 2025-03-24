@@ -10,3 +10,7 @@ spring:
         git:
           uri: https://github.com/KFD-Projektio/open-config-repo
           clone-on-start: true
+          search-paths:
+            - "/"
+            - "/{application}/{profile}"
+            - "/{application}"
