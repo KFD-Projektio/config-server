@@ -14,3 +14,12 @@ spring:
             - "/"
             - "/{application}/{profile}"
             - "/{application}"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, metrics
+  metrics:
+    export:
+      prometheus:
+        enabled: true
